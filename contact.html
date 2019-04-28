@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<!--
+File Name: contact.html
+Date: 03/17/19
+Programmer: Ji Yu
+-->
+
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<meta name="description" content="Ji Yu PCC web design student portfolio">
+	<base target="_blank">
+	<!-- open all links not marked "_self" in a new tab -->
+
+	<title>Ji Yu | Contact</title>
+	<link rel="shortcut icon" type="image/x-icon" href="images/logo.svg">
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/grid.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/navigation.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type='text/css'>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+	<!-- THIS IS A STICKY NAVBAR -->
+	<header class="header">
+		<input class="menu-btn" type="checkbox" id="menu-btn" />
+		<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+
+		<a href="index.html" target="_self"><img id="logo" src="images/logo-1.png" alt="logo" /></a>
+
+		<ul class="menu" id="mainmenu">
+			<li id="menuportfolio"><a href="index.html#pictures" target="_self" onclick="myClick();">Portfolio</a></li>
+			<li id="menuskills"><a href="skills.html" target="_self" onclick="myClick();">Skills</a></li>
+			<li id="menucontact"><a href="contact.html" target="_self" onclick="myClick();">Contact</a></li>
+		</ul>
+
+	</header>
+
+	<main class="contents" id="scroll_content">
+		<section class="contents">
+
+			<!-- This is contact section -->
+			<section class="group" id="contact">
+
+				<h2>CONTACT</h2>
+
+				<div class="container">
+					<form action="" method="post">
+
+						<label for="fname">First Name</label>
+						<input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+						<label for="lname">Last Name</label>
+						<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+						<label for="email">Email</label>
+						<input type="text" id="email" name="email" placeholder="Your email..">
+
+						<label for="subject">Subject</label>
+						<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+						<input type="submit">
+
+					</form>
+				</div>
+			</section>
+		</section>
+
+		<footer>
+
+			<hr>
+			<!-- CHANGE THE SOCIAL MEDIA LINKS FOR JI'S PORTFOLIO HERE  -->
+			<section id="social">
+
+				<a href="http://www.facebook.com" class="fa fa-facebook"></a>
+				<a href="http://www.twitter.com" class="fa fa-twitter"></a>
+				<a href="https://www.linkedin.com/" class="fa fa-linkedin"></a>
+
+			</section>
+
+		</footer>
+
+		<!-- SCRIPT FOR AUTO CLOSE THE DROPDOWN MENU AFTER A CLICK UNDER MOBILE USE -->
+		<script>
+			function myClick() {
+				var btn;
+				if (document.body.clientWidth <= 600) {
+					btn = document.getElementById('menu-btn').click();
+				}
+				return false;
+			}
+
+		</script>
+
+	</main>
+
+</body>
+
+</html>
