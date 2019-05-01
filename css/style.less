@@ -34,7 +34,7 @@ Programmer: Ji Yu
 @d_bg_color: @base_color;
 @footer_color: #000000;
 @references_hover_color: #ff0000;
-@references_bg_color: #999999;
+@references_bg_color: gray;
 @header_color: #ffffff;
 @h2_bg_color: #cccccc;
 @social_icon_color: red;
@@ -85,7 +85,6 @@ header:after {
 	border: 2px solid lightgray;
 }
 
-
 p {
 	margin: @p_h_margin;
 }
@@ -118,7 +117,6 @@ h2 {
 h3 {
 	margin: @p_h_margin;
 	#project_mixins > .size(@h3_font_size);
-	background-color: @references_bg_color;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	text-align: center;
@@ -128,9 +126,12 @@ h3 {
 
 h4 {
 	font-size: @h4_font_size;
-	text-align: center;
-	color: @social_icon_color;
-	padding-bottom: 25px;
+	text-align: left;
+	color: black;
+	padding: 20px 20px;
+	background-color: #eaeaea;
+	font-weight: bold;
+	text-align: left;
 }
 
 h5 {
@@ -144,16 +145,79 @@ ul {
 li {
 	line-height: 1em;
 	padding-left: 30px;
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: 100;
 }
 
+.einfo {
+	margin-top: 100px;
+}
+
+.einfo h3 {
+	color: red;
+	background: black;
+	outline-style: dotted;
+	outline-width: thin;
+	outline-color: red;
+}
+
+.einfo p {
+	margin-bottom: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 1em;
+}
+
+.einfo a {
+	padding: 5px 5px;
+	color: white;
+	background-color: red;
+	margin-left: 10px;
+	margin-top: 25px;
+	outline-style: dotted;
+	outline-width: thin;
+	outline-color: black;
+}
+
+.faqs {
+	margin-top: 100px;
+}
+
+.faqs h3 {
+	color: red;
+	background: black;
+	outline-style: dotted;
+	outline-width: thin;
+	outline-color: red;
+}
+
+.faqs p {
+	margin-bottom: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 1.25em;
+	font-family: 'Oswald', sans-serif;
+
+}
+
+.faqs a {
+	padding: 5px 5px;
+	color: red;
+	margin-left: 5px;
+	margin-top: 25px;
+}
+
 footer {
-	font-style: italic;
+	font-size: 1em;
 	#project_mixins > .color(@footer_color);
 	text-align: center;
 	background-color: @footer_color;
-	padding-bottom: 15px;
+	padding-bottom: 25px;
+}
+
+footer p {
+	font-size: 0.5em;
+	color: gray;
 }
 
 .landscape {
@@ -169,6 +233,7 @@ footer {
 	border-radius: 6px;
 	font-weight: 600;
 	position: static;
+	margin: auto;
 }
 
 .fa {
@@ -177,7 +242,7 @@ footer {
 	width: 45px;
 	text-align: center;
 	text-decoration: none;
-	margin: 5px 10px;
+	margin: 5px 30px;
 }
 
 .fa:hover {
@@ -215,6 +280,9 @@ footer {
 #hello {
 	background: black;
 	text-align: center;
+	outline-style: dotted;
+	outline-width: thin;
+	outline-color: red;
 }
 
 #hello h3 {
@@ -254,30 +322,41 @@ footer {
 
 #mainmenu {
 	background-color: white;
-	box-shadow: 1px 3px 5px #888888;
-
+	box-shadow: 1px 3px 5px #000000;
 }
 
-#tweeter {
+#feedone {
 	text-align: left;
 	display: inline;
-	padding-right: 2px;
+	padding-right: 3px;
 	padding-left: 2px;
 }
 
-#tweeter p {
+#feedone p {
 	margin: 20px;
+	line-height: 1.5;
 }
 
-#facebook {
+#feedtwo {
 	text-align: left;
 	display: inline;
-	padding-right: 2px;
+	padding-right: 3px;
 	padding-left: 2px;
 }
 
-#facebook p {
+#feedtwo p {
 	margin: 20px;
+	line-height: 1.5;
+}
+
+#eventdetail p {
+	margin: 20px;
+	line-height: 1.5;
+}
+
+#answers p {
+	margin: 20px;
+	line-height: 1.7;
 }
 
 #social p {
@@ -456,6 +535,8 @@ input[type=submit]:hover {
 	border-radius: 5px;
 	background-color: #ffffff;
 	padding: 20px;
+	max-width: 800px;
+	margin: auto;
 }
 
 /* TABLET STYLES */
@@ -481,6 +562,12 @@ input[type=submit]:hover {
 		font-weight: bold;
 	}
 
+	h4 {
+		font-size: 125%;
+		padding-top: 10px;
+		margin-left: 0;
+	}
+
 	h5 {
 		display: block;
 		color: @references_bg_color;
@@ -489,11 +576,7 @@ input[type=submit]:hover {
 	}
 
 	ul {
-		margin-bottom: 15px;
-	}
-
-	ul {
-		margin-bottom: 1em;
+		margin-bottom: 2em;
 	}
 
 	header {
@@ -504,6 +587,11 @@ input[type=submit]:hover {
 		content: ' ';
 		display: block;
 		border: 2px solid lightgray;
+	}
+
+	footer {
+		font-size: 1.2em;
+
 	}
 
 	.menu a {
@@ -524,6 +612,7 @@ input[type=submit]:hover {
 
 	.menu li {
 		display: inline;
+		font-size: 1.5em;
 	}
 
 	.portrait {
@@ -542,11 +631,30 @@ input[type=submit]:hover {
 		margin-top: 0px;
 		top: 20px;
 	}
-	
-	
+
 	.contents p {
 		font-size: 120%;
-		line-height: 1.4;
+		line-height: 1.5;
+	}
+
+	.einfo {
+		margin-top: 125px;
+	}
+
+	.einfo h3 {
+		font-size: 1.4em;
+	}
+
+	.faqs {
+		margin-top: 125px;
+	}
+
+	.faqs h3 {
+		font-size: 1.4em;
+	}
+
+	.faqs p {
+		font-size: 1.5em;
 	}
 
 	#logo {
@@ -571,6 +679,10 @@ input[type=submit]:hover {
 		margin-top: 100px;
 	}
 
+	#copyright {
+		font-size: 0.6em;
+	}
+
 }
 
 /* DESKTOP STYLES */
@@ -590,18 +702,17 @@ input[type=submit]:hover {
 	}
 
 	h4 {
-		font-size: 125%;
+		font-size: 135%;
 		padding-top: 10px;
+		margin-left: 0;
 	}
 
 	header {
 		height: 150px;
 	}
 
-	li {
-		font-size: 25px;
-		font-weight: 100;
-		margin: 5px;
+	.menu li {
+		font-size: 1.8em;
 	}
 
 	.slideshow-container {
@@ -636,6 +747,23 @@ input[type=submit]:hover {
 		line-height: 1.6;
 	}
 
+	.einfo {
+		margin-top: 153px;
+	}
+
+	.einfo h3 {
+		font-size: 1.7em;
+	}
+
+	.faqs {
+		margin-top: 153px;
+	}
+
+	.faqs h3 {
+		font-size: 1.7em;
+		;
+	}
+
 	#logo {
 		margin-left: 35px;
 		width: 360px;
@@ -650,7 +778,7 @@ input[type=submit]:hover {
 	}
 
 	#hello h3 {
-		font-size: 1.5em;
+		font-size: 1.8em;
 	}
 
 	#hello p {
