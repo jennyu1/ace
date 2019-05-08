@@ -5,6 +5,21 @@ File Name: index.html
 Date: 04/25/19
 Programmer: Ji Yu
 -->
+<?php
+include 'includes/db.inc.html.php';
+
+try
+{
+    $sql = 'SELECT * FROM registration WHERE id=1';
+    $result = $pdo->query($sql);
+}
+catch (PDOException $e)
+{
+    $error = 'Error fetching contents: ' . $e->getMessage();
+    include 'includes/error.html.php';
+    exit();
+}
+?>
 
 <html lang="en">
 
@@ -38,7 +53,12 @@ Programmer: Ji Yu
 	<?php include 'includes/header.inc.html.php'; ?>
 
 	<main class="contents" id="scroll_content">
-		<section class="slideshow">
+
+		<section class="slideshow" id="portrait">
+			<img src="images/all3.jpg" alt="triathlon" />
+		</section>
+
+		<section class="slideshow" id="landscape">
 
 			<!-- Slideshow container -->
 			<div class="slideshow-container">
