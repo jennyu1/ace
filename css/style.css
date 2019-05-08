@@ -145,9 +145,6 @@ footer p {
   font-size: 0.5em;
   color: gray;
 }
-.landscape {
-  display: none;
-}
 .desktop {
   display: none;
 }
@@ -185,6 +182,9 @@ footer p {
 }
 #scroll_content {
   margin-top: 80px;
+}
+#landscape {
+  display: none;
 }
 #logo {
   float: none;
@@ -467,13 +467,13 @@ input[type=submit]:hover {
     display: inline;
     font-size: 1.5em;
   }
-  .portrait {
+  #portrait {
     display: none;
   }
   .desktop {
     display: none;
   }
-  .landscape {
+  #landscape {
     display: block;
   }
   .slideshow-container {
@@ -548,12 +548,6 @@ input[type=submit]:hover {
   .slideshow-container {
     width: 55%;
     top: 50px;
-  }
-  .portrait {
-    display: none;
-  }
-  .landscape {
-    display: none;
   }
   .col-sm-6 {
     font-size: 1.2em;
