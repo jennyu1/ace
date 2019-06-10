@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 
 <!--
-File Name: index.html
-Date: 04/25/19
+File Name: register.php
+Date: 05/25/19
 Programmer: Ji Yu
 -->
-
-<html lang="en">
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +13,7 @@ Programmer: Ji Yu
 	<base target="_blank">
 	<!-- open all links not marked "_self" in a new tab -->
 
-	<title>ACE IN THE HOLE MULTISPORT EVENTS</title>
+	<title>REGISTER - ACE IN THE HOLE MULTISPORT EVENTS</title>
 	<link rel="shortcut icon" type="image/x-icon" href="images/logo.svg">
 	<link href="css/reset.css" rel="stylesheet" type="text/css">
 	<link href="css/grid.css" rel="stylesheet" type="text/css">
@@ -29,97 +27,71 @@ Programmer: Ji Yu
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
+<?php
+include 'includes/db.inc.html.php';
 
-<body>
+try
+{
+    $sql = 'SELECT * FROM registration WHERE id=1';
+    $result = $pdo->query($sql);
+}
+catch (PDOException $e)
+{
+    $error = 'Error fetching contents: ' . $e->getMessage();
+    include 'includes/error.html.php';
+    exit();
+}
 
-	<?php include 'includes/header.inc.html.php'; ?>
+// Modify the If statement so the try only runs if the First Name field has been submitted AND the honeypot field is empty ''
+if (isset($_POST['myfname']) and $_POST['honeypot'] == '') {
+    // If the if statement is true, save each form field value as a variable. These variable values will be used in the thank you page.
 
-	<main class="contents" id="scroll_content">
+    // And run the try/catch to attempt to insert data in the database. Modify the INSERT statement to write all the form filed values (except the honeypot) to the database.
+    try {
+        $sql = 'INSERT INTO registration SET
+          fname = :myfname,
+		  lname = :mylname,
+		  age = :myage,
+		  gender = :mygender,
+		  phone = :myphone,
+		  date = :mydate,
+		  email = :myemail,
+		  tshirt_size = :mytshirt_size,
+		  e_name = :mye_name,
+		  e_phone = :mye_phone,
+		  sat_event = :mysat_event,
+		  sat_role = :mysat_role,
+		  sun_event = :mysun_event,
+		  sun_role = :mysun_role';
+        $s = $pdo->prepare($sql);
+        $s->bindValue(':myfname', $_POST['myfname']);
+		$s->bindValue(':mylname', $_POST['mylname']);
+        $s->bindValue(':myage', $_POST['myage']);
+        $s->bindValue(':mygender', $_POST['mygender']);
+        $s->bindValue(':myphone', $_POST['myphone']);
+		$s->bindValue(':mydate', date(DATE_ATOM));
+        $s->bindValue(':myemail', $_POST['myemail']);
+		
+		$s->bindValue(':mytshirt_size', $_POST['mytshirt_size']);
+        $s->bindValue(':mye_name', $_POST['mye_name']);
+        $s->bindValue(':mye_phone', $_POST['mye_phone']);
+        $s->bindValue(':mysat_event', $_POST['mysat_event']);
+        $s->bindValue(':mysat_role', $_POST['mysat_role']);
+        $s->bindValue(':mysun_event', $_POST['mysun_event']);
+        $s->bindValue(':mysun_role', $_POST['mysun_role']);
+        $s->execute();
+    } catch (PDOException $e) {
+        $error = 'Error adding submitted data: ' . $e->getMessage();
+        include 'includes/error.html.php';
+        exit();
+    }
+    // load the thank you page after the INSERT runs
+    include 'includes/success.html.php';
+    // Add an else to load the initial page if the initial (line 19) if statement is false
+}
 
-		<!-- title goes here -->
-		<article class="faqs">
-			<h3>EVENT REGISTRATION</h3>
-			<p> Please register online by filling out the form below.</p>
-		</article>
+else {
+   include 'includes/register.html.php';
+}
 
-
-		<!-- registration form goes here -->
-		<article class="group" id="register">
-
-			<div class="container">
-				<form action="action_page.php">
-
-					<label for="fname">Area 1</label>
-					<input type="text" id="fname" name="firstname" placeholder="Your name..">
-
-					<label for="lname">Area 2</label>
-					<input type="text" id="lname" name="lastname" placeholder="Your last name..">
-
-					<label for="country">Options</label>
-					<select id="country" name="country">
-						<option value="athlete">A</option>
-						<option value="volunteer">B</option>
-						<option value="interested party">C</option>
-					</select>
-
-					<input type="submit" value="Submit">
-
-				</form>
-			</div>
-
-		</article>
-
-
-
-		<?php include 'includes/footer.inc.html.php'; ?>
-
-		<!-- SCRIPT FOR AUTO CLOSE THE DROPDOWN MENU AFTER A CLICK UNDER MOBILE USE -->
-		<script>
-			function myClick() {
-				var btn;
-				if (document.body.clientWidth <= 600) {
-					btn = document.getElementById('menu-btn').click();
-				}
-				return false;
-			}
-			// script for slideshow 
-			var slideIndex = 1;
-			showSlides(slideIndex);
-
-			// Next/previous controls
-			function plusSlides(n) {
-				showSlides(slideIndex += n);
-			}
-
-			// Thumbnail image controls
-			function currentSlide(n) {
-				showSlides(slideIndex = n);
-			}
-
-			function showSlides(n) {
-				var i;
-				var slides = document.getElementsByClassName("mySlides");
-				var dots = document.getElementsByClassName("dot");
-				if (n > slides.length) {
-					slideIndex = 1
-				}
-				if (n < 1) {
-					slideIndex = slides.length
-				}
-				for (i = 0; i < slides.length; i++) {
-					slides[i].style.display = "none";
-				}
-				for (i = 0; i < dots.length; i++) {
-					dots[i].className = dots[i].className.replace(" active", "");
-				}
-				slides[slideIndex - 1].style.display = "block";
-				dots[slideIndex - 1].className += " active";
-			}
-			// script for slideshow END
-
-		</script>
-
-	</main>
-</body>
-
-</html>
+?>
