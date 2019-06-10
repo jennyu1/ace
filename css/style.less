@@ -47,7 +47,7 @@ Programmer: Ji Yu
 @h1_font_size: 2em;
 @h2_font_size: @h1_font_size * .7;
 @h3_font_size: @h1_font_size * .55;
-@h4_font_size: @h1_font_size * .5;
+@h4_font_size: @h1_font_size * .6;
 @summary_font_size: .6em;
 @summary_first_font_size: 1.5em;
 @designer_font_size: .75em;
@@ -163,8 +163,8 @@ li {
 
 .einfo p {
 	margin-bottom: 15px;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
 	font-size: 1em;
 }
 
@@ -197,7 +197,7 @@ li {
 	padding-right: 20px;
 	font-size: 1.25em;
 	font-family: 'Oswald', sans-serif;
-
+	text-align: center;
 }
 
 .faqs a {
@@ -205,6 +205,24 @@ li {
 	color: red;
 	margin-left: 5px;
 	margin-top: 25px;
+}
+
+.accommodate {
+	font-style: italic;
+}
+
+.details h4 {
+	background: black;
+	text-align: center;
+	color: white;
+	display: inline;
+	font-size: 1em;
+}
+
+.fb-page {
+	align-content: center;
+	display: inline-block;
+	width: 1000px;
 }
 
 footer {
@@ -225,12 +243,33 @@ footer p {
 }
 
 .btn {
-	font-size: 16px;
+	font-size: 17px;
 	border-radius: 6px;
 	font-weight: 600;
 	position: static;
 	margin: auto;
 }
+
+.notetext {
+	color: gray;
+	font-style: italic;
+}
+
+.note {
+	font-weight: 600;
+	font-style: italic;
+	margin-left: 10px;
+}
+
+.weatherwidget-io {
+	margin: 10px;
+}
+
+.fb-page {
+	float: left;
+}
+
+.form-header {}
 
 .fa {
 	padding: 10px;
@@ -301,6 +340,7 @@ footer p {
 	padding-left: 20px;
 	padding-right: 20px;
 	font-size: 1em;
+	font-weight: 600;
 }
 
 #hello a {
@@ -320,13 +360,27 @@ footer p {
 	margin: 20px;
 }
 
+#event_intro p {
+	margin: 20px;
+}
+
+#starting_time h3 {
+	display: block;
+	margin-bottom: 5px;
+}
+
+#starting_time ul {
+	margin-bottom: 15px;
+	font-size: 1em;
+	margin-left: 5px;
+}
+
 #mainmenu {
 	background-color: white;
 	box-shadow: 1px 3px 5px #000000;
 }
 
 #feedone {
-	text-align: left;
 	display: inline;
 	padding-right: 3px;
 	padding-left: 2px;
@@ -338,7 +392,6 @@ footer p {
 }
 
 #feedtwo {
-	text-align: left;
 	display: inline;
 	padding-right: 3px;
 	padding-left: 2px;
@@ -349,14 +402,24 @@ footer p {
 	line-height: 1.5;
 }
 
+#starting_time {
+	display: block;
+}
+
+#starting_time li {
+	font-size: 1em;
+	line-height: 1.5;
+}
+
 #eventdetail p {
-	margin: 20px;
+	margin: 30px;
 	line-height: 1.5;
 }
 
 #answers p {
 	margin: 20px;
 	line-height: 1.7;
+	margin-left: 50px;
 }
 
 #social p {
@@ -364,6 +427,39 @@ footer p {
 	font-size: 0.7em;
 	font-style: normal;
 }
+
+#honeypot {
+	display: none;
+}
+
+#success {
+	margin-top: 250px;
+	margin-bottom: 250px;
+}
+
+#register_form {
+	background: lightgray;
+}
+
+#regiform {
+	line-height: 2;
+}
+
+#regi_notes h4 {
+	text-align: center;
+}
+
+#regi_notes p {
+	font-size: 1em;
+}
+
+#regi_notes li {
+	line-height: 1.5;
+	font-size: 1em;
+	margin-bottom: 15px;
+	padding-left: 10px;
+}
+
 
 /* style the slideshow/
 * {box-sizing:border-box}
@@ -496,9 +592,9 @@ select,
 textarea {
 	width: 100%;
 	/* Full width */
-	padding: 12px;
+	padding: 10px;
 	/* Some padding */
-	border: 1px solid #ccc;
+	border: 1px solid gray;
 	/* Gray border */
 	border-radius: 4px;
 	/* Rounded borders */
@@ -526,7 +622,35 @@ input[type=submit] {
 /* When moving the mouse over the submit button, add a darker green color */
 
 input[type=submit]:hover {
-	background-color: footer_color;
+	background-color: red;
+}
+
+#registration-reset {
+	background-color: black;
+	color: white;
+	padding: 12px 25px;
+	margin-right: 35px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+#registration-reset :hover {
+	background-color: black;
+}
+
+
+#registration-submit {
+	background-color: @references_hover_color;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+#registration-submit :hover {
+	background-color: red;
 }
 
 /* Add a background color and some padding around the form */
@@ -537,6 +661,38 @@ input[type=submit]:hover {
 	padding: 20px;
 	max-width: 800px;
 	margin: auto;
+}
+
+.form-header-2 {
+	font-family: 'Oswald', sans-serif;
+}
+
+.einfo img {
+	display: none;
+}
+
+.bring img {
+	display: none;
+}
+
+.course_details {
+	background: black;
+	color: white;
+	padding: 5px;
+}
+
+.course_details1 {
+	background: lightgray;
+	color: black;
+	padding: 5px;
+}
+
+#company img {
+	display: none;
+}
+
+#event_intro img {
+	display: none;
 }
 
 /* TABLET STYLES */
@@ -563,7 +719,7 @@ input[type=submit]:hover {
 	}
 
 	h4 {
-		font-size: 125%;
+		font-size: 135%;
 		padding-top: 10px;
 		margin-left: 0;
 	}
@@ -645,6 +801,23 @@ input[type=submit]:hover {
 		font-size: 1.4em;
 	}
 
+	.einfo p {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+
+	.weatherwidget-io {
+		margin-left: 50px;
+		margin-right: 50px;
+		margin-top: 0px;
+	}
+
+	#eventdetail p {
+		margin-left: 50px;
+		margin-right: 50px;
+		margin-bottom: 30px;
+	}
+
 	.faqs {
 		margin-top: 125px;
 	}
@@ -654,7 +827,41 @@ input[type=submit]:hover {
 	}
 
 	.faqs p {
-		font-size: 1.5em;
+		font-size: 1.6em;
+	}
+
+	.einfo img {
+		float: left;
+		display: block;
+		width: 250px;
+		margin: 20px;
+		margin-left: 50px;
+	}
+
+	.bring img {
+		float: left;
+		display: block;
+		width: 250px;
+		margin: 30px;
+		margin-left: 50px;
+	}
+
+	#company img {
+		float: left;
+		display: block;
+		width: 250px;
+		margin: 30px;
+		margin-left: 50px;
+	}
+
+
+	#event_intro img {
+		display: none;
+	}
+
+	#company p {
+		margin-top: 40px;
+		font-size: 1.3em;
 	}
 
 	#logo {
@@ -663,6 +870,8 @@ input[type=submit]:hover {
 
 	#hello p {
 		font-size: 1.2em;
+		padding-left: 30px;
+		padding-left: 30px;
 	}
 
 	#mainmenu {
@@ -681,6 +890,14 @@ input[type=submit]:hover {
 
 	#copyright {
 		font-size: 0.6em;
+	}
+
+	#regi_notes li {
+		padding-left: 30px;
+	}
+
+	.note {
+		margin-left: 30px;
 	}
 
 }
@@ -702,13 +919,14 @@ input[type=submit]:hover {
 	}
 
 	h4 {
-		font-size: 135%;
+		font-size: 155%;
 		padding-top: 10px;
 		margin-left: 0;
 	}
 
 	header {
 		height: 150px;
+
 	}
 
 	.menu li {
@@ -747,13 +965,42 @@ input[type=submit]:hover {
 		font-size: 1.7em;
 	}
 
+	.einfo img {
+		width: 300px;
+		margin-left: 100px;
+
+	}
+
+	.einfo p {
+		margin-right: 100px;
+		margin-left: 50px;
+	}
+
 	.faqs {
 		margin-top: 153px;
 	}
 
+	.faqs p {
+		font-size: 1.8em;
+	}
+
 	.faqs h3 {
 		font-size: 1.7em;
-		;
+	}
+
+	.bring img {
+		width: 300px;
+		margin-left: 100px;
+	}
+
+	.weatherwidget-io {
+		margin-left: 100px;
+		margin-right: 100px;
+		margin-top: 0px;
+	}
+
+	.note {
+		margin-left: 50px;
 	}
 
 	#logo {
@@ -762,8 +1009,8 @@ input[type=submit]:hover {
 	}
 
 	#hello {
-		margin-left: 2px;
-		margin-right: 2px;
+		margin-left: 10px;
+		margin-right: 10px;
 		margin-top: 5px;
 		border-radius: ;
 		border: 5px solid red;
@@ -775,6 +1022,7 @@ input[type=submit]:hover {
 
 	#hello p {
 		font-size: 1.5em;
+		font-weight: 600;
 	}
 
 	#hello a {
@@ -785,6 +1033,70 @@ input[type=submit]:hover {
 		top: 95px;
 		right: 7%;
 		padding-left: 30px;
+	}
+
+	#company p {
+		margin: 50px;
+		padding-right: 150px;
+		font-size: 1.55em;
+	}
+
+	#company img {
+		margin-left: 200px;
+	}
+
+	#feedone {
+		padding-right: 5px;
+		padding-left: 100px;
+		width: 500px;
+		align-content: stretch;
+	}
+
+	#feedtwo {
+		padding-left: 100px;
+	}
+
+	#answers p {
+		margin-left: 200px;
+		margin-right: 200px;
+	}
+
+	#answers h4 {
+		padding-left: 150px;
+	}
+
+	#starting_time h3 {
+		font-size: 1.25em;
+		text-align: center;
+	}
+
+	#starting_time ul {
+		margin-bottom: 15px;
+		font-size: 1.25em;
+		padding-left: 200px;
+		text-align: left;
+	}
+
+	#event_intro img {
+		float: left;
+		display: block;
+		width: 250px;
+		margin: 30px;
+		margin-left: 200px;
+	}
+
+	#event_intro p {
+		font-size: 1.55em;
+		margin-left: 150px;
+	}
+
+	#eventdetail p {
+		margin-left: 100px;
+		margin-right: 100px;
+	}
+
+	#regi_notes li {
+		padding-left: 50px;
 	}
 
 }
