@@ -4,7 +4,7 @@
 	<input class="menu-btn" type="checkbox" id="menu-btn" />
 	<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
 
-	<a href="index.php" target="_self"><img id="logo" src="<?php echo BASE_URL; ?>/images/logo-ace.png" alt="logo" /></a>
+	<a href="index.php" target="_self"><img id="logo" src="<?php echo BASE_URL; ?>/images/logo-ace.png" alt="ace-logo" /></a>
 
 	<ul class="menu" id="mainmenu">
 		<li id="menuevent"><a href="event.php" target="_self" onclick="myClick();">Event Info</a></li>
